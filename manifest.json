@@ -1,0 +1,20 @@
+{
+    "name": "iframe player",
+    "description": "Open videos in an iframe.",
+    "version": "1.0.0",
+    "manifest_version": 3,
+    "background": {
+        "service_worker": "background.js"
+    },
+    "content_scripts": [
+        {
+            "matches": [
+                "*://youtube.com/*",
+                "*://www.youtube.com/*",
+                "*://m.youtube.com/*"
+            ],
+            "css": ["style.css"],
+            "js": ["createiframe.js"]
+        }
+    ]
+}
