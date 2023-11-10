@@ -15,7 +15,7 @@ function injectBypassButton(){
         openTabButton.innerHTML = "Open iframe ↗";
         openTabButton.id = buttonID;
         openTabButton.addEventListener("click", openTab);
-        document.getElementById("secondary").prepend(openTabButton);
+        document.getElementById("end").prepend(openTabButton);
     }
 }
 
