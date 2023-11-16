@@ -19,3 +19,9 @@
 #createiframeButton:hover {
     background-color: #3c57c2;
 }
+
+#createiframeButton:disabled {
+    background-color: #c4c4c4;
+    border: 2px solid #ababab;
+    cursor: default;
+}
