@@ -14,15 +14,19 @@ function injectBypassButton(){
     // the videoID will only be valid if we're on a watch page
     let videoID = getVideoId(window.location.href);
 
-    // create the bypass button on the page (if one doesn't already exist)
-    if(!document.getElementById(buttonID)){
-        const openTabButton = document.createElement("button");
-        openTabButton.innerHTML = "Open iframe ↗";
-        openTabButton.id = buttonID;
-        openTabButton.addEventListener("click", openTab);
-        // this places the button in the top icon bar
-        document.getElementById("end").prepend(openTabButton);
+    // remove the button if it exists
+    if(document.getElementById(buttonID)){
+        document.getElementById(buttonID).remove();
     }
+    
+    // now recreate the button so it always has the right data for the current page
+    const openTabButton = document.createElement("button");
+    openTabButton.innerHTML = "Open iframe ↗";
+    openTabButton.id = buttonID;
+    openTabButton.addEventListener("click", openTab);
+    // this places the button in the top icon bar
+    document.getElementById("end").prepend(openTabButton);
+    
 
     // disable the button if we're not on a watch page
     if(videoID) {
