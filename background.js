@@ -27,7 +27,6 @@ chrome.runtime.onMessage.addListener(function (message, sender, sendResponse) {
   if (message.action === "openNewTab") {
     console.log(message.content);
     // Create a new tab with a data URL
-    // chrome.tabs.create({ url: "data:text/html," + encodeURIComponent(message.content) });
     chrome.tabs.create({
       url: chrome.runtime.getURL("videoPage.html?" + encodeURIComponent(message.content))
     });

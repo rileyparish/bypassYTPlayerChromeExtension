@@ -10,7 +10,7 @@
   iframe.width = "1296";
   iframe.height = "729";
   iframe.src = url;
-  iframe.title = "YouTube video player";
+  iframe.title = "iframe Player";
   iframe.allow =
     "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share";
   iframe.allowFullscreen = true;
