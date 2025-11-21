@@ -1,11 +1,21 @@
 {
     "name": "iframe player",
     "description": "Open videos in an iframe.",
-    "version": "1.0.3",
+    "version": "1.0.4",
     "manifest_version": 3,
     "background": {
         "service_worker": "background.js"
     },
+    "web_accessible_resources": [
+        {
+            "resources": [
+                "videoPage.html"
+            ],
+            "matches": [
+                "<all_urls>"
+            ]
+        }
+    ],
     "content_scripts": [
         {
             "matches": [
@@ -14,8 +24,19 @@
                 "*://m.youtube.com/*"
             ],
             "run_at": "document_end",
-            "css": ["style.css"],
-            "js": ["createiframe.js"]
+            "css": [
+                "style.css"
+            ],
+            "js": [
+                "ytWebpageInteractions.js",
+                "genIframe.js"
+            ]
         }
+    ],
+    "permissions": [
+        "declarativeNetRequestWithHostAccess"
+    ],
+    "host_permissions": [
+        "https://www.youtube.com/*"
     ]
 }
